@@ -9,7 +9,7 @@ class IteratorTask1:
         self.limit = len(self.file_names)
         self.path = path
 
-    def __next__(self):
+    def __next__(self)->None:
         if self.counter < self.limit:
             self.counter += 1
             return os.path.join(self.path, self.file_names[self.counter-1])
@@ -22,13 +22,13 @@ class IteratorTask2:
         self.file_names = os.listdir(os.path.join(path))
         for name in self.file_names:
             if not class_name in name:
-                self.file_names.remove(name)
+                continue
 
         self.limit = len(self.file_names)
         self.counter = 0
         self.path = path
 
-    def __next__(self):
+    def __next__(self)->None:
         if self.counter < self.limit:
             self.counter += 1
             return os.path.join(self.path, self.file_names[self.counter-1])
@@ -52,7 +52,7 @@ class IteratorTask3:
         self.counter = 0
         self.path = path
 
-    def __next__(self):
+    def __next__(self)->None:
         if self.counter < self.limit:
             self.counter += 1
             return os.path.join(self.path, self.file_names[self.counter-1])

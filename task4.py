@@ -7,6 +7,5 @@ def get_next_element(class_mark: str) -> Optional[str]:
     path = os.path.join("dataset", class_mark)
     names_list = os.listdir(path)
     names_list.append(None)
-    i = 0
-    for i in range(0, len(names_list)):
+    for i in range(len(names_list)):
         yield names_list[i]
