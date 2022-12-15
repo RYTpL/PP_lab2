@@ -9,7 +9,7 @@ class IteratorTask1:
         self.limit = len(self.file_names)
         self.path = path
 
-    def __next__(self)->None:
+    def __next__(self) -> None:
         if self.counter < self.limit:
             self.counter += 1
             return os.path.join(self.path, self.file_names[self.counter-1])
@@ -28,7 +28,7 @@ class IteratorTask2:
         self.counter = 0
         self.path = path
 
-    def __next__(self)->None:
+    def __next__(self) -> None:
         if self.counter < self.limit:
             self.counter += 1
             return os.path.join(self.path, self.file_names[self.counter-1])
@@ -52,10 +52,9 @@ class IteratorTask3:
         self.counter = 0
         self.path = path
 
-    def __next__(self)->None:
+    def __next__(self) -> None:
         if self.counter < self.limit:
             self.counter += 1
             return os.path.join(self.path, self.file_names[self.counter-1])
         else:
             raise StopIteration
-
